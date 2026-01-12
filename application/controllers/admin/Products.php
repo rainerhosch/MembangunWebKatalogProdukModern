@@ -16,7 +16,7 @@ class Products extends CI_Controller
     public function index()
     {
         $data['products'] = $this->product_model->get_all();
-        $this->load->view('products/index', $data);
+        $this->load->view('admin/products/index', $data);
     }
 
     /**
@@ -24,7 +24,7 @@ class Products extends CI_Controller
      */
     public function create()
     {
-        $this->load->view('products/add');
+        $this->load->view('admin/products/add');
     }
 
     /**
@@ -42,7 +42,7 @@ class Products extends CI_Controller
             $this->session->set_flashdata('success', 'Produk berhasil ditambahkan!');
         }
 
-        redirect('products');
+        redirect('admin/products');
     }
 
     /**
@@ -55,6 +55,6 @@ class Products extends CI_Controller
             $this->session->set_flashdata('success', 'Produk berhasil dihapus!');
         }
 
-        redirect('products');
+        redirect('admin/products');
     }
 }
